@@ -15,11 +15,11 @@ public class Decorator {
                 nameOfToy = toy.getToyName();
         }
 
-        System.out.println("++++++++++++++++++++++++++++");
+       // System.out.println("++++++++++++++++++++++++++++");
         System.out.println("++++++++++++++++++++++++++++");
         System.out.println("+++++++++  " + nameOfToy + "  +++++++++");
         System.out.println("++++++++++++++++++++++++++++");
-        System.out.println("++++++++++++++++++++++++++++");
+        System.out.println();
 
     }
 }

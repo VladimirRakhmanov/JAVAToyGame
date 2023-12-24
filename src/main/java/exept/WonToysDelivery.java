@@ -6,17 +6,19 @@ import java.util.ArrayList;
 
 public class WonToysDelivery {
 
-//    FileWriter fileWriter = new FileWriter("delivery.txt");
+    public WonToysDelivery() {
 
-    public WonToysDelivery(ArrayList<Toy> toysToDeliveryList) throws IOException {
+    }
 
+    public void deliver(ArrayList<Toy> toyList) {
         try (FileWriter fileWriter = new FileWriter("delivery.txt")) {
-            for (Toy toy : toysToDeliveryList) {
-                fileWriter.write(toy.getToyName());
+            for (Toy toy : toyList) {
+                fileWriter.write(toy.getToyName() + "\n");
             }
 
         } catch (IOException fwe) {
             throw new RuntimeException("Не удалось доставить игрушку в файл");
         }
+
     }
 }
