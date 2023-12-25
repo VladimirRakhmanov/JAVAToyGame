@@ -10,9 +10,12 @@ public class ToysToObtainList {
     }
 
     public void showAllToys() {
+        System.out.println();
+        System.out.println("+++++++ Игрушки в игровом автомате: +++++++");
         for (Toy toy : toyList) {
             System.out.println(toy);
         }
+        System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
     }
 
 }

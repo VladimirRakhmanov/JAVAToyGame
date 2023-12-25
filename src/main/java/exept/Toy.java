@@ -11,6 +11,14 @@ public class Toy {
         this.toyName = toyName;
         this.quantity = quantity;
         this.frequency = frequency;
+
+    }
+
+    public void limiter() {
+        if (this.quantity > 5)
+            this.quantity = 5;
+        if (this.quantity <= 0)
+            this.quantity = 1;
     }
 
     public int getID() {
@@ -49,7 +57,7 @@ public class Toy {
     public String toString() {
         return "Игрушка {" +
                 "ID: " + ID +
-                ", Название игрушки: '" + toyName + '\'' +
+                ", Название: '" + toyName + '\'' +
                 ", Количество: " + quantity +
                 ", Частота выпадения: " + frequency +
                 '}';

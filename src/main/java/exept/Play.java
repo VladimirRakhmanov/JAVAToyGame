@@ -1,22 +1,14 @@
 package exept;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class Play {
 
     public Play() {
     }
-
-    public int generate(Random random, int[] numbers, int[] chances) {
-        int x = random.nextInt(chances[chances.length - 1]);
-        int i = Arrays.binarySearch(chances, x);
-        if (i < 0) i = -1 - i;
-        return numbers[i];
-    }
-
-    public int generate_v1(ArrayList<Toy> toyList) {
+// функция случайного выбора игрушек из массива, где игрушки повторяются с определенной в их свойствах частотой.
+    public int generate_v1(ArrayList<Toy> toyList, ArrayList<Toy> toyWonList) {
         Random rnd = new Random();
         int x = rnd.nextInt(1, 10) * 10;
         int[] chances = new int[100];
@@ -37,9 +29,14 @@ public class Play {
 
         }
         int winner = chances[x];
-        for (Toy toy : toyList) {
-            if (toy.getID() == winner)
+        for (int i = 0; i < toyList.size(); i++) {
+            Toy toy = toyList.get(i);
+
+            if (toy.getID() == winner) {
                 toy.setQuantity(toy.getQuantity() - 1);
+                toyWonList.add(new Toy(i, toy.getToyName(), 1, 0));
+
+            }
         }
 
 
